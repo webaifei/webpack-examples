@@ -53,5 +53,52 @@ entry: {
         //1. name=》entry中如果配置的是string或者是array 那么 name==main 如果是object 那么就是对应的key
         //2. id 是webpack打包生成的一个数字
         filename: '[name].bundle.js'
+        publicPath:
     }
 ```
+
+3. module
+
+```
+module:{
+        //这里设置对各种资源进行处理的加载器
+        loaders:[
+            //对js或者是jsx文件进行jsx编译,然后使用babel将es6语法编译成es5语法
+            {
+                test:/.jsx?$/, //匹配什么文件
+                include:[], //必须在什么文件夹下 没有可以不写
+                exclude:/node_moduls/,//不需要进行此loader进行处理的文件夹 (这个选项会提高编译的速度)
+                //使用的编译插件babel-loader (写成babel也可)
+                //两种配置参数的方式
+                // 1. 字符串"babel?presets[]=react,presets[]=es2015"
+                // 2. 设置query选项
+                loader:"babel-loader",
+                query:{
+                    presets:['react','es2015']
+                }
+
+            },
+
+
+        ],
+        //设置不用去使用loader去解析的路径 可以提高编译的性能
+        //配置项是一个正则 或者是一个 正则数组
+        noParse:/src/,
+        //再使用loaders进行编译之前进行的预处理
+        //常用来进行css,js的检测
+        preLoaders:[
+            {test: /\.(js|jsx)$/,
+                     loader: 'eslint-loader',
+                     include: [path.resolve(__dirname, "src/app")],
+                     exclude: [nodeModulesPath]}
+        ],
+        //loaders处理完成之后进行的处理
+        postLoaders:[]
+    }
+```
+
+
+4. resovle 配置项
+
+我是没整出来 整出来的知道下 ^_^
+
