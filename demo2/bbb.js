@@ -1,0 +1,1 @@
+console.log('this is the page b script.')

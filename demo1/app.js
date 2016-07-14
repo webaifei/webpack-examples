@@ -1,0 +1,1 @@
+var log = require('./common')log()console.log('app')

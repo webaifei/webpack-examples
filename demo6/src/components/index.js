@@ -1,0 +1,1 @@
+import React, { Component } from 'react'require('./index.scss')export default class Index extends Component {    render(){        return(            <div id="index">                <h1>                    heelo                </h1>                <p>this is the index page.</p>            </div>        )    }}

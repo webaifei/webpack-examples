@@ -1,0 +1,1 @@
+module.exports = {    //1.字符串    entry: "./app.js",    //2. 数组    //entry:["./common.js", "./app.js"],    //3. 对象 多个入口 多个入口 分析依赖  输出多个目标文件 使用webpack插件可以把共同的部分抽离成单个文件    entry: {        index: './app.js',        bbb: './bbb.js'    },    output: {        path: './dist',        filename: '[name].bundle.js'    }}

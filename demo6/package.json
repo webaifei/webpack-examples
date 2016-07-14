@@ -1,0 +1,32 @@
+{
+  "name": "webpack-practice",
+  "version": "1.0.0",
+  "description": "use webpack step by step",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack-dev-server --hot"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.23.1",
+    "extract-loader": "0.0.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "node-sass": "^3.8.0",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^1.14.1"
+  }
+}

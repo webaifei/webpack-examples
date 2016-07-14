@@ -1,0 +1,1 @@
+var request = require('request')request.post(    'http://s.jdpay.com/banner/bannerList',    {        form:{            type:1        },        //json: true    }, function (err, res, body){        console.log(body)    })
