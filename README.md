@@ -96,20 +96,21 @@ npm install webpack -g
             postLoaders:[]
         }
     ```
+4. plugins 插件
 
 
-4. resovle 配置项
+5. resovle 配置项
 
     我是没整出来 整出来的知道下 ^_^
 
 
-5. cache 是否缓存
+6. cache 是否缓存
 
     默认是true
 
-6. watch 开启检测 文件修改之后 就会重新编译
+7. watch 开启检测 文件修改之后 就会重新编译
 
-7. devtool debug模式
+8. devtool debug模式
 
 
 
@@ -117,38 +118,91 @@ npm install webpack -g
 
 1. iframe模式
 
-> 只需要在之前打开的连接后面加上/webpack-dev-server/<path>
-配置文件和命令行都不需要改变
+    > 只需要在之前打开的连接后面加上/webpack-dev-server/<path>
+    配置文件和命令行都不需要改变
 
 2. inline 模式
 
-> 1) 第一种方式 webpack-dev-server --inline
-2) 第二种是在配置文件中修改, 但是并不是添加一个inline:true 的选项
- 注意: 没有这个选项, 没有这个选项,没有这个选项
- 在entry中新增
- ```
- entry: [
-         'webpack/hot/dev-server',
-         'webpack-dev-server/client?http://localhost:8080',
-         "./src/index.js"
+    > 1) 第一种方式 webpack-dev-server --inline
+    2) 第二种是在配置文件中修改, 但是并不是添加一个inline:true 的选项
+     注意: 没有这个选项, 没有这个选项,没有这个选项
+     在entry中新增
+     ```
+     entry: [
+             'webpack/hot/dev-server',
+             'webpack-dev-server/client?http://localhost:8080',
+             "./src/index.js"
 
-     ],
+         ],
 
- plugins:[
-    new webpack.HotModuleReplacementPlugin()
- ]
+     plugins:[
+        new webpack.HotModuleReplacementPlugin()
+     ]
 
-```
+    ```
 
 ## 实现热更新(hot module replace)
-1.命令行启动
+
+1. 命令行启动
 ```
 webpack-dev-server --hot --inline
 ```
 
 2. webpack-dev-server 除了在命令行中启动, 还可以作为express的中间件
+> 使用webpack-dev-server nodejs api 来实现需要如下的改变
 
+1. 你的配置文件中的output.path 必须是绝对路径 否则会报错：invalid argument
+2. entry添加两个入口文件
+```
+config.entry.unshift( "webpack-dev-server/client?http://localhost:8080/","webpack/hot/dev-server");
+```
+3. 设置hot和contentBase参数(在webpack.config.js中配置 貌似不会生效)
+```
+var server = new webpackDevServer(complier,{
+  hot: true,
+  //这个参数很关键
+  contentBase: './dist/'
+})
+```
 
+完整代码
 
+```
+var config = require('./webpack.config');
 
+var webpack=  require('webpack')
+var webpackDevServer = require('webpack-dev-server');
 
+//增加了两个入口js
+config.entry.unshift( "webpack-dev-server/client?http://localhost:8080/","webpack/hot/dev-server");
+//console.log(config)
+var complier = webpack(config)
+
+var server = new webpackDevServer(complier,{
+  hot: true,
+  //这个参数很关键
+  contentBase: './dist/'
+})
+//
+server.listen(8080)
+
+```
+## webpack-dev-server 的proxy选项(内部实现使用的是node-http-proxy中间件)
+> 本地开发的时候  我们可能需要部分请求本地模拟接口 部分请求测试环境 ， 部分请求线上接口（嗯， 前端就这么苦逼^_^）
+怎么实现呢？
+webpack-dev-server的proxy选项能够帮助我们来实现
+
+1. 在配置项中配置
+```
+// In webpack.config.js
+{
+  devServer: {
+    proxy: {
+      '/some/path*': {
+        target: 'https://other-server.example.com',
+        secure: false
+      }
+    }
+  }
+}
+```
