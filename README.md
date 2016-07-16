@@ -183,7 +183,7 @@ npm install webpack -g
       //in your webpack.config.js
       new webpack.UglifyJsPlugin({
         compress:{
-          warning: false
+          warnings: false
         }
       })
 
