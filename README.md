@@ -205,6 +205,20 @@ npm install webpack -g
       ```
       [html-webpack-plugin 参考地址](https://github.com/ampedandwired/html-webpack-plugin)
 
+    4. open-browser-webpack-plugin 自动使用浏览器打开你的页面
+
+    ```
+    //install open-browser-webpack-plugin
+      npm install open-brower-webpack-plugin
+
+      //in your webpack.config.js
+      new OpenBrowserPlugin({
+        url:'http://localhost:8080'
+      })
+
+
+    ```
+
 
 5. resovle 配置项
 
