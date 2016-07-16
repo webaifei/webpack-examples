@@ -97,13 +97,12 @@ npm install webpack -g
         }
     ```
 4. plugins 插件
-   用来辅助开发配置
-
    > 常用的插件列表
 
    1. new webpack.DefinePlugin(definitions)
    常用来定义不同的环境下的标志变量 ，比如我们要实现 在开发环境中输出log日志，debug，调用不同的接口而在线上环境就需要对文件进行压缩，关闭log功能等等。
-   ```//通过 env 来定义不同的环境变量 结合我们的webpack.DefinePlugin来达到我们在程序代码中获知不同的环境的能力。
+   ```
+   //通过 env 来定义不同的环境变量 结合我们的webpack.DefinePlugin来达到我们在程序代码中获知不同的环境的能力。
       new webpack.DefinePlugin({
         ENV: JSON.stringify(process.env.ENV||'dev'),
         'process.env.ENV': JSON.stringify('true'),
@@ -114,6 +113,7 @@ npm install webpack -g
 
    ```
    程序中引用
+
    ```
     if( ENV=='dev' ){
       //开发环境中的不同的逻辑操作
@@ -123,16 +123,17 @@ npm install webpack -g
       
     }
    ```
-    > tips:
-    1. key如果是：'xxx.xxx.xxx' , 那么你在代码中需要这样使用：
-      这个key更像一个暂位符
-      ```
-      if(xxx.xxx.xxx){
+    ### tips:
+      1. key如果是：'xxx.xxx.xxx' , 那么你在代码中需要这样使用：
+        这个key更像一个暂位符
+        ```
+        if(xxx.xxx.xxx){
 
-      }
-      ```
-    2. value如果是一个字符串，但是没有通过JSON.stringify()输出的话，你定义的字符串会被当作代码
-      ```
+        }
+        ```
+      2. value如果是一个字符串，但是没有通过JSON.stringify()输出的话，你定义的字符串会被当作代码
+
+        ```
         //in webpack.config.js
         new webpack.DefinePlugin({
           'config.env':'getEnv'
@@ -147,33 +148,34 @@ npm install webpack -g
           
         }
 
-      ```
-    3. value如果通过JSON.stringify输出
-      ```
-        //in webpack.config.js
-        new webpack.DefinePlugin({
-          'config.env': JSON.stringify('dev')
-        })
+        ```
+      3. value如果通过JSON.stringify输出
 
-        //in your code 
-        if(config.env=='dev'){
-          
-        }
+        ```
+          //in webpack.config.js
+          new webpack.DefinePlugin({
+            'config.env': JSON.stringify('dev')
+          })
 
-      ```
-    4. value如果是一个boolean类型的值，
-      ```
-        //in webpack.config.js
-        new webpack.DefinePlugin({
-          'config.debug': false
-        })
+          //in your code 
+          if(config.env=='dev'){
+            
+          }
 
-        //in your code 
-        if(config.debug){
-          
-        }
-      ```
-      总结下：如果是字符串的变量，使用JSON.stringify输出
+        ```
+      4. value如果是一个boolean类型的值，
+        ```
+          //in webpack.config.js
+          new webpack.DefinePlugin({
+            'config.debug': false
+          })
+
+          //in your code 
+          if(config.debug){
+            
+          }
+        ```
+        总结下：如果是字符串的变量，使用JSON.stringify输出
 
     2. webpack.UglifyJsPlugin(opts) 代码压缩， 一般生产环境中使用
 
@@ -206,7 +208,8 @@ npm install webpack -g
 
 5. resovle 配置项
 
-    我是没整出来 整出来的知道下 ^_^
+    ^_^ 后续补上！
+
 
 
 6. cache 是否缓存

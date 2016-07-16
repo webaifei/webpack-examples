@@ -2,18 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f338a036-b22a-4ee0-99da-538530bcebbe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo8/dist/a51edf2134966a7d64456a7ece23a09f.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo8/dist/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo8/dist/main.bundle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo8/dist/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo8/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo8/server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo8/src/components/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo8/src/components/index.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo8/src/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo8/src/request.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo8/src/utils/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo8/webpack.config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
@@ -40,8 +28,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="204">
-                <caret line="177" column="25" selection-start-line="177" selection-start-column="25" selection-end-line="177" selection-end-column="25" />
+              <first_editor relative-caret-position="242">
+                <caret line="179" column="25" selection-start-line="179" selection-start-column="25" selection-end-line="179" selection-end-column="25" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -336,12 +324,12 @@
       <workItem from="1468419435892" duration="1346000" />
       <workItem from="1468458980316" duration="1795000" />
       <workItem from="1468484140758" duration="2007000" />
-      <workItem from="1468660540028" duration="3933000" />
+      <workItem from="1468660540028" duration="4180000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31637000" />
+    <option name="totallyTimeSpent" value="31884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="728" extended-state="6" />
@@ -699,8 +687,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="204">
-            <caret line="177" column="25" selection-start-line="177" selection-start-column="25" selection-end-line="177" selection-end-column="25" />
+          <first_editor relative-caret-position="242">
+            <caret line="179" column="25" selection-start-line="179" selection-start-column="25" selection-end-line="179" selection-end-column="25" />
             <folding />
           </first_editor>
           <second_editor />
