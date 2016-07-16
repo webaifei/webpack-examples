@@ -1,0 +1,1 @@
+module.exports = {    alert: function (){        alert(11)    }}
