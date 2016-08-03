@@ -177,11 +177,11 @@ npm install webpack -g
         ```
         总结下：如果是字符串的变量，使用JSON.stringify输出
 
-    2. webpack.UglifyJsPlugin(opts) 代码压缩， 一般生产环境中使用
+    2. webpack.optimize.UglifyJsPlugin(opts) 代码压缩， 一般生产环境中使用
 
       ```
       //in your webpack.config.js
-      new webpack.UglifyJsPlugin({
+      new webpack.optimize.UglifyJsPlugin({
         compress:{
           warnings: false
         }
